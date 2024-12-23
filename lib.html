@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phyzigs Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('libbg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .library-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(236, 111, 111, 0);
+            border-radius: 10px;
+            overflow-y: auto; /* Enable vertical scrollbar */
+            max-height: calc(100vh - 40px); /* Adjust max height as needed */
+        }
+
+        .library-header {
+            text-align: center;
+            padding: -40px;
+            font-size: 1.5em;
+            margin-top: 2px;
+        }
+
+        .class-container {
+            margin: 70px auto;
+            padding: 20px;
+            background-color: rgba(70, 15, 14, 0.573);
+            border-radius: 10px;
+            color: #000;
+            position: relative; /* Ensure relative positioning */
+        }
+
+        .class-container h2 {
+            text-align: center;
+            color:beige;
+            font-size: xx-large;
+            margin-bottom: 20px;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Adjust height as needed */
+            overflow: hidden;
+            perspective: 1000px;
+            margin: 0 auto; /* Center horizontally */
+        }
+
+        .carousel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%) rotateY(0deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .book {
+            position: absolute;
+            width: 50px; /* Adjust book width as needed */
+            height: 75px; /* Adjust book height as needed */
+            border: 1px solid #fff;
+            background: #fff;
+            border-radius: 10px 10px 10px 10px; /* Book-like shape */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.818);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .book img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px 5px 0 0; /* Book-like shape */
+            object-fit: cover;
+            transform-style: preserve-3d; /* Ensure perspective is applied */
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .button.left {
+            left: 20px;
+        }
+
+        .button.right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="library-container">
+        <div class="library-header">
+            <h1>Phyzigs Library</h1>
+        </div>
+
+        <!-- Class 8 Section -->
+        <div class="class-container">
+            <h2>Class 8</h2>
+            <div class="carousel-container">
+                <button class="button left" onclick="rotateCarousel(-1, 'carousel8')">‹</button>
+                <div class="carousel" id="carousel8">
+                    <!-- Books for Class 8 -->
+                    <div class="book" style="transform: rotateY(0deg) translateZ(200px);" onclick="downloadPDF('hemh101.pdf')">
+                        <img src="h1.png" alt="Class 8 Book 1">
+                    </div>
+                    <div class="book" style="transform: rotateY(12deg) translateZ(200px);" onclick="downloadPDF('hemh102.pdf')">
+                        <img src="h2.png" alt="Class 8 Book 2">
+                    </div>
+                    <div class="book" style="transform: rotateY(24deg) translateZ(200px);" onclick="downloadPDF('hemh103.pdf')">
+                        <img src="h3.png" alt="Class 8 Book 3">
+                    </div>
+                    <div class="book" style="transform: rotateY(36deg) translateZ(200px);" onclick="downloadPDF('hemh104.pdf')">
+                        <img src="h4.png" alt="Class 8 Book 4">
+                    </div>
+                    <div class="book" style="transform: rotateY(48deg) translateZ(200px);" onclick="downloadPDF('hemh105.pdf')">
+                        <img src="h5.png" alt="Class 8 Book 5">
+                    </div>
+                    <div class="book" style="transform: rotateY(60deg) translateZ(200px);" onclick="downloadPDF('hemh106.pdf')">
+                        <img src="h6.png" alt="Class 8 Book 6">
+                    </div>
+                    <div class="book" style="transform: rotateY(72deg) translateZ(200px);" onclick="downloadPDF('hemh107.pdf')">
+                        <img src="h7.png" alt="Class 8 Book 7">
+                    </div>
+                    <div class="book" style="transform: rotateY(84deg) translateZ(200px);" onclick="downloadPDF('hemh108.pdf')">
+                        <img src="h8.png" alt="Class 8 Book 8">
+                    </div>
+                    <div class="book" style="transform: rotateY(96deg) translateZ(200px);" onclick="downloadPDF('hemh109.pdf')">
+                        <img src="h9.png" alt="Class 8 Book 9">
+                    </div>
+                    <div class="book" style="transform: rotateY(108deg) translateZ(200px);" onclick="downloadPDF('hemh110.pdf')">
+                        <img src="h10.png" alt="Class 8 Book 10">
+                    </div>
+                    <div class="book" style="transform: rotateY(120deg) translateZ(200px);" onclick="downloadPDF('hemh111.pdf')">
+                        <img src="h11.png" alt="Class 8 Book 11">
+                    </div>
+                    <div class="book" style="transform: rotateY(132deg) translateZ(200px);" onclick="downloadPDF('hemh112.pdf')">
+                        <img src="h12.png" alt="Class 8 Book 12">
+                    </div>
+                    <div class="book" style="transform: rotateY(144deg) translateZ(200px);" onclick="downloadPDF('hemh113.pdf')">
+                        <img src="h13.png" alt="Class 8 Book 13">
+                    </div>
+                    
+                    <div class="book" style="transform: rotateY(156deg) translateZ(200px);" onclick="downloadPDF('hesc101.pdf')">
+                        <img src="h14.jpg" alt="Class 8 Book 14">
+                    </div>
+                    <div class="book" style="transform: rotateY(168deg) translateZ(200px);" onclick="downloadPDF('hesc102.pdf')">
+                        <img src="h15.jpg" alt="Class 8 Book 15">
+                    </div>
+                    <div class="book" style="transform: rotateY(180deg) translateZ(200px);" onclick="downloadPDF('hesc103.pdf')">
+                        <img src="h16.jpg" alt="Class 8 Book 16">
+                    </div>
+                    <div class="book" style="transform: rotateY(192deg) translateZ(200px);" onclick="downloadPDF('hesc104.pdf')">
+                        <img src="h17.jpg" alt="Class 8 Book 17">
+                    </div>
+                    <div class="book" style="transform: rotateY(204deg) translateZ(200px);" onclick="downloadPDF('hesc105.pdf')">
+                        <img src="h18.jpg" alt="Class 8 Book 18">
+                    </div>
+                    <div class="book" style="transform: rotateY(216deg) translateZ(200px);" onclick="downloadPDF('hesc106.pdf')">
+                        <img src="h19.jpg" alt="Class 8 Book 19">
+                    </div>
+                    <div class="book" style="transform: rotateY(228deg) translateZ(200px);" onclick="downloadPDF('hesc107.pdf')">
+                        <img src="h20.jpg" alt="Class 8 Book 20">
+                    </div>
+                    <div class="book" style="transform: rotateY(240deg) translateZ(200px);" onclick="downloadPDF('hesc108.pdf')">
+                        <img src="h21.jpg" alt="Class 8 Book 21">
+                    </div>
+                    <div class="book" style="transform: rotateY(252deg) translateZ(200px);" onclick="downloadPDF('hesc109.pdf')">
+                        <img src="h22.jpg" alt="Class 8 Book 22">
+                    </div>
+                    <div class="book" style="transform: rotateY(264deg) translateZ(200px);" onclick="downloadPDF('hesc110.pdf')">
+                        <img src="h23.jpg" alt="Class 8 Book 23">
+                    </div>
+                    <div class="book" style="transform: rotateY(276deg) translateZ(200px);" onclick="downloadPDF('hesc111.pdf')">
+                        <img src="h24.jpg" alt="Class 8 Book 24">
+                    </div>
+                    <div class="book" style="transform: rotateY(288deg) translateZ(200px);" onclick="downloadPDF('hesc112.pdf')">
+                        <img src="h25.jpg" alt="Class 8 Book 25">
+                    </div>
+                    <div class="book" style="transform: rotateY(300deg) translateZ(200px);" onclick="downloadPDF('hesc113.pdf')">
+                        <img src="h26.jpg" alt="Class 8 Book 26">
+                    </div>
+                    
+                    <!-- Extra books -->
+                    <div class="book" style="transform: rotateY(312deg) translateZ(200px);" onclick="downloadPDF('extraBook1.pdf')">
+                        <img src="h27.jpg" alt="Extra Book 1">
+                    </div>
+                    <div class="book" style="transform: rotateY(324deg) translateZ(200px);" onclick="downloadPDF('extraBook2.pdf')">
+                        <img src="h28.jpg" alt="Extra Book 2">
+                    </div>
+                    <div class="book" style="transform: rotateY(336deg) translateZ(200px);" onclick="downloadPDF('extraBook3.pdf')">
+                        <img src="h29.jpg" alt="Extra Book 3">
+                    </div>
+                    
+                    <!-- More books for Class 8 -->
+                </div>
+                <button class="button right" onclick="rotateCarousel(1, 'carousel8')">›</button>
+            </div>
+        </div>
+
+        <!-- Class 9 Section -->
+        <div class="class-container">
+            <h2>Class 9</h2>
+            <div class="carousel-container">
+                <button class="button left" onclick="rotateCarousel(-1, 'carousel9')">‹</button>
+                <div class="carousel" id="carousel9">
+                    <!-- Books for Class 9 -->
+                    <div class="book" style="transform: rotateY(0deg) translateZ(200px);" onclick="downloadPDF('iemh101.pdf')">
+                        <img src="d1.jpg" alt="Class 9 Book 1">
+                    </div>
+                    <div class="book" style="transform: rotateY(12deg) translateZ(200px);" onclick="downloadPDF('iemh102.pdf')">
+                        <img src="d2.jpg" alt="Class 9 Book 2">
+                    </div>
+                    <div class="book" style="transform: rotateY(24deg) translateZ(200px);" onclick="downloadPDF('iemh103.pdf')">
+                        <img src="d3.jpg" alt="Class 9 Book 3">
+                    </div>
+                    <div class="book" style="transform: rotateY(36deg) translateZ(200px);" onclick="downloadPDF('iemh104.pdf')">
+                        <img src="d4.jpg" alt="Class 9 Book 4">
+                    </div>
+                    <div class="book" style="transform: rotateY(48deg) translateZ(200px);" onclick="downloadPDF('iemh105.pdf')">
+                        <img src="d5.jpg" alt="Class 9 Book 5">
+                    </div>
+                    <div class="book" style="transform: rotateY(60deg) translateZ(200px);" onclick="downloadPDF('iemh106.pdf')">
+                        <img src="d6.jpg" alt="Class 9 Book 6">
+                    </div>
+                    <div class="book" style="transform: rotateY(72deg) translateZ(200px);" onclick="downloadPDF('iemh107.pdf')">
+                        <img src="d7.jpg" alt="Class 9 Book 7">
+                    </div>
+                    <div class="book" style="transform: rotateY(84deg) translateZ(200px);" onclick="downloadPDF('iemh108.pdf')">
+                        <img src="d8.jpg" alt="Class 9 Book 8">
+                    </div>
+                    <div class="book" style="transform: rotateY(96deg) translateZ(200px);" onclick="downloadPDF('iemh109.pdf')">
+                        <img src="d9.jpg" alt="Class 9 Book 9">
+                    </div>
+                    <div class="book" style="transform: rotateY(108deg) translateZ(200px);" onclick="downloadPDF('iemh110.pdf')">
+                        <img src="d10.jpg" alt="Class 9 Book 10">
+                    </div>
+                    <div class="book" style="transform: rotateY(120deg) translateZ(200px);" onclick="downloadPDF('iemh111.pdf')">
+                        <img src="d11.jpg" alt="Class 9 Book 11">
+                    </div>
+                    <div class="book" style="transform: rotateY(132deg) translateZ(200px);" onclick="downloadPDF('iemh112.pdf')">
+                        <img src="d12.jpg" alt="Class 9 Book 12">
+                    </div>
+                    <div class="book" style="transform: rotateY(144deg) translateZ(200px);" onclick="downloadPDF('iemh113.pdf')">
+                        <img src="d13.jpg" alt="Class 9 Book 13">
+                    </div>
+                    
+                    <div class="book" style="transform: rotateY(156deg) translateZ(200px);" onclick="downloadPDF('iesc101.pdf')">
+                        <img src="d14.jpg" alt="Class 9 Book 14">
+                    </div>
+                    <div class="book" style="transform: rotateY(168deg) translateZ(200px);" onclick="downloadPDF('iesc102.pdf')">
+                        <img src="d15.jpg" alt="Class 9 Book 15">
+                    </div>
+                    <div class="book" style="transform: rotateY(180deg) translateZ(200px);" onclick="downloadPDF('iesc103.pdf')">
+                        <img src="d16.jpg" alt="Class 9 Book 16">
+                    </div>
+                    <div class="book" style="transform: rotateY(192deg) translateZ(200px);" onclick="downloadPDF('iesc104.pdf')">
+                        <img src="d17.jpg" alt="Class 9 Book 17">
+                    </div>
+                    <div class="book" style="transform: rotateY(204deg) translateZ(200px);" onclick="downloadPDF('iesc105.pdf')">
+                        <img src="d18.jpg" alt="Class 9 Book 18">
+                    </div>
+                    <div class="book" style="transform: rotateY(216deg) translateZ(200px);" onclick="downloadPDF('iesc106.pdf')">
+                        <img src="d19.jpg" alt="Class 9 Book 19">
+                    </div>
+                    <div class="book" style="transform: rotateY(228deg) translateZ(200px);" onclick="downloadPDF('iesc107.pdf')">
+                        <img src="d20.jpg" alt="Class 9 Book 20">
+                    </div>
+                    <div class="book" style="transform: rotateY(240deg) translateZ(200px);" onclick="downloadPDF('iesc108.pdf')">
+                        <img src="d21.jpg" alt="Class 9 Book 21">
+                    </div>
+                    <div class="book" style="transform: rotateY(252deg) translateZ(200px);" onclick="downloadPDF('iesc109.pdf')">
+                        <img src="d22.jpg" alt="Class 9 Book 22">
+                    </div>
+                    <div class="book" style="transform: rotateY(264deg) translateZ(200px);" onclick="downloadPDF('iesc110.pdf')">
+                        <img src="d23.jpg" alt="Class 9 Book 23">
+                    </div>
+                    <div class="book" style="transform: rotateY(276deg) translateZ(200px);" onclick="downloadPDF('iesc111.pdf')">
+                        <img src="d24.jpg" alt="Class 9 Book 24">
+                    </div>
+                    <div class="book" style="transform: rotateY(288deg) translateZ(200px);" onclick="downloadPDF('iesc112.pdf')">
+                        <img src="d25.jpg" alt="Class 9 Book 25">
+                    </div>
+                    
+                    <!-- Extra books -->
+                    <div class="book" style="transform: rotateY(300deg) translateZ(200px);" onclick="downloadPDF('extraBook1.pdf')">
+                        <img src="d26.jpg" alt="Extra Book 1">
+                    </div>
+                    <div class="book" style="transform: rotateY(312deg) translateZ(200px);" onclick="downloadPDF('extraBook2.pdf')">
+                        <img src="d27.jpg" alt="Extra Book 2">
+                    </div>
+                    <div class="book" style="transform: rotateY(324deg) translateZ(200px);" onclick="downloadPDF('extraBook3.pdf')">
+                        <img src="d28.jpg" alt="Extra Book 3">
+                    </div>
+                    
+                    <!-- More books for Class 9 -->
+                </div>
+                <button class="button right" onclick="rotateCarousel(1, 'carousel9')">›</button>
+            </div>
+        </div>
+
+        <!-- Class 10 Section -->
+        <div class="class-container">
+            <h2>Class 10</h2>
+            <div class="carousel-container">
+                <button class="button left" onclick="rotateCarousel(-1, 'carousel10')">‹</button>
+                <div class="carousel" id="carousel10">
+                    <!-- Books for Class 10 -->
+                    <div class="book" style="transform: rotateY(0deg) translateZ(200px);" onclick="downloadPDF('jemh101.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 1">
+                    </div>
+                    <div class="book" style="transform: rotateY(12deg) translateZ(200px);" onclick="downloadPDF('jemh102.pdf')">
+                        <img src="c .jpg" alt="Class 10 Book 2">
+                    </div>
+                    <div class="book" style="transform: rotateY(24deg) translateZ(200px);" onclick="downloadPDF('jemh103.pdf')">
+                        <img src="c .jpg" alt="Class 10 Book 3">
+                    </div>
+                    <div class="book" style="transform: rotateY(36deg) translateZ(200px);" onclick="downloadPDF('jemh104.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 4">
+                    </div>
+                    <div class="book" style="transform: rotateY(48deg) translateZ(200px);" onclick="downloadPDF('jemh105.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 5">
+                    </div>
+                    <div class="book" style="transform: rotateY(60deg) translateZ(200px);" onclick="downloadPDF('jemh106.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 6">
+                    </div>
+                    <div class="book" style="transform: rotateY(72deg) translateZ(200px);" onclick="downloadPDF('jemh107.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 7">
+                    </div>
+                    <div class="book" style="transform: rotateY(84deg) translateZ(200px);" onclick="downloadPDF('jemh108.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 8">
+                    </div>
+                    <div class="book" style="transform: rotateY(96deg) translateZ(200px);" onclick="downloadPDF('jemh109.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 9">
+                    </div>
+                    <div class="book" style="transform: rotateY(108deg) translateZ(200px);" onclick="downloadPDF('jemh110.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 10">
+                    </div>
+                    <div class="book" style="transform: rotateY(120deg) translateZ(200px);" onclick="downloadPDF('jemh111.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 11">
+                    </div>
+                    <div class="book" style="transform: rotateY(132deg) translateZ(200px);" onclick="downloadPDF('jemh112.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 12">
+                    </div>
+                    <div class="book" style="transform: rotateY(144deg) translateZ(200px);" onclick="downloadPDF('jemh113.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 13">
+                    </div>
+                    <div class="book" style="transform: rotateY(156deg) translateZ(200px);" onclick="downloadPDF('jemh114.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 14">
+                    </div>
+                    
+                    <div class="book" style="transform: rotateY(168deg) translateZ(200px);" onclick="downloadPDF('jesc101.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 15">
+                    </div>
+                    <div class="book" style="transform: rotateY(180deg) translateZ(200px);" onclick="downloadPDF('jesc102.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 16">
+                    </div>
+                    <div class="book" style="transform: rotateY(192deg) translateZ(200px);" onclick="downloadPDF('jesc103.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 17">
+                    </div>
+                    <div class="book" style="transform: rotateY(204deg) translateZ(200px);" onclick="downloadPDF('jesc104.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 18">
+                    </div>
+                    <div class="book" style="transform: rotateY(216deg) translateZ(200px);" onclick="downloadPDF('jesc105.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 19">
+                    </div>
+                    <div class="book" style="transform: rotateY(228deg) translateZ(200px);" onclick="downloadPDF('jesc106.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 20">
+                    </div>
+                    <div class="book" style="transform: rotateY(240deg) translateZ(200px);" onclick="downloadPDF('jesc107.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 21">
+                    </div>
+                    <div class="book" style="transform: rotateY(252deg) translateZ(200px);" onclick="downloadPDF('jesc108.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 22">
+                    </div>
+                    <div class="book" style="transform: rotateY(264deg) translateZ(200px);" onclick="downloadPDF('jesc109.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 23">
+                    </div>
+                    <div class="book" style="transform: rotateY(276deg) translateZ(200px);" onclick="downloadPDF('jesc110.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 24">
+                    </div>
+                    <div class="book" style="transform: rotateY(288deg) translateZ(200px);" onclick="downloadPDF('jesc111.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 25">
+                    </div>
+                    <div class="book" style="transform: rotateY(300deg) translateZ(200px);" onclick="downloadPDF('jesc112.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 26">
+                    </div>
+                    <div class="book" style="transform: rotateY(312deg) translateZ(200px);" onclick="downloadPDF('jesc113.pdf')">
+                        <img src="c.jpg" alt="Class 10 Book 27">
+                    </div>
+                    
+                    <!-- Extra books -->
+                    <div class="book" style="transform: rotateY(324deg) translateZ(200px);" onclick="downloadPDF('extraBook1.pdf')">
+                        <img src="c.jpg" alt="Extra Book 1">
+                    </div>
+                    <div class="book" style="transform: rotateY(336deg) translateZ(200px);" onclick="downloadPDF('extraBook2.pdf')">
+                        <img src="c.jpg" alt="Extra Book 2">
+                    </div>
+                    <div class="book" style="transform: rotateY(348deg) translateZ(200px);" onclick="downloadPDF('extraBook3.pdf')">
+                        <img src="c.jpg" alt="Extra Book 3">
+                    </div>
+                    
+                    
+                    <!-- Add more books for Class 10 -->
+                </div>
+                <button class="button right" onclick="rotateCarousel(1, 'carousel10')">›</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function rotateCarousel(direction, carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const angle = 30; // Angle between each book
+
+            // Get current rotation angle from data attribute, default to 0 if not set
+            let currentRotation = parseFloat(carousel.dataset.rotation) || 0;
+
+            // Calculate new rotation angle
+            let newRotation = currentRotation + (direction * angle);
+
+            // Apply the new rotation to the carousel
+            carousel.style.transform = `translate(-50%, -50%) rotateY(${newRotation}deg)`;
+
+            // Update the data attribute with the new rotation angle
+            carousel.dataset.rotation = newRotation;
+        }
+
+        function downloadPDF(pdfName) {
+            const link = document.createElement('a');
+            link.href = pdfName;  // Assuming the PDFs are in the same directory
+            link.download = pdfName;
+            link.click();
+        }
+    </script>
+</body>
+</html>
